@@ -1,0 +1,398 @@
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+"username":"12344",
+"password":"123456",
+"name":"Nguyễn",
+"email":"54@gmail.com",
+"district":"huyen_chau_thanh",
+"province":"tinh_tien_giang",
+"school":"truong_dai_hoc_tien_giang_tcn"
+}
+###
+DELETE http://localhost:5000/api/users/613b466111d0f24b575a9e8f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMzllMzc4ZGMxZTljYzkwYThlZGZkNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMTI3NDk0MiwiZXhwIjoxNjMxMjc1NTQyfQ.-z3HGNPkdqhYoaLMUo6wt2cdXz63nKBLybwpqn-eXnY
+###
+GET http://localhost:5000/api/
+###
+POST http://localhost:5000/api/login
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMzUxMDA1NywiZXhwIjoxNjMzNTEwMDg3fQ.kQbrkkPsBRA3n5U8tmdZiU-DllvRjt8spB-_YQkX2e8
+
+ {
+    "username":"admin2",
+    "password":"123456"
+    // "accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMzUwOTAyOCwiZXhwIjoxNjMzNTA5NjI4fQ.B9QIlEO7J2BV56XL2K7qItHPW9_GOBPtvTr0tCSXCSE"
+ }
+
+###
+POST http://localhost:5000/api/forgot-password
+Content-Type: application/json
+
+{
+    "email":"killdogvinam@gmail.com"
+}
+###
+GET http://localhost:5000/api/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEyODlmMWMyZTVkMWY0MDdiMGEyNzFmIiwiaWF0IjoxNjMwMDY1NzAwLCJleHAiOjE2MzAwNjc1MDB9.lb24sbXuHo5ylAASqCPc0tB8V4L7Sr7iXbBPhmzEce4
+
+
+###
+POST http://localhost:5000/api/reset-password/
+Content-Type: application/json
+
+{
+    "password":"1234567",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmNjMjIwMDUyNzRkNjg1ZWRiZTRkNyIsImlhdCI6MTYzMDU2MjE0NCwiZXhwIjoxNjMwNTYyNzQ0fQ.pE-hb1XIZES702cr02wyHXWuZRPLbocfcljYoMQHjs4"
+}
+###
+GET http://localhost:5000/api/provinces
+###
+
+GET http://localhost:5000/api/districts?province=thanh_pho_ha_noi
+
+###
+
+GET http://localhost:5000/api/schools?province=thanh_pho_ho_chi_minh&district=quan_9
+
+###
+POST http://localhost:5000/api/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2YyODM0MGEwZjY4ZDQxYzAwMWIxYyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzE1ODk2MzN9.6s96mM7pVh-4tgLK0emVRbKJkn03jbPG5y8toDq-xHg"
+} 
+###
+
+GET http://localhost:5000/api/users/?_role=user
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmNjMjIwMDUyNzRkNjg1ZWRiZTRkNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMTA4NDYyNiwiZXhwIjoxNjMxMDg1MjI2fQ.KItpbh8nSNWvDlOltIkM6xOjpbR98d9_jy0SgWYWu6g
+
+###
+PUT http://localhost:5000/api/user/612cc22005274d685edbe4d7
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmNjMjIwMDUyNzRkNjg1ZWRiZTRkNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMTA4NTE5NiwiZXhwIjoxNjMxMDg1Nzk2fQ.Wy_83T6YYMBfG7CDxXyHSw1GFD2vIE1A9e6zdZH2fdw
+
+{
+    "tokenId":"4/0AX4XfWjDvzNuBXggSEKhZYKRr0URYMlfiP6v1m3-hgn2H9hR6yXJMHL8FwUGqd_6KbyzhA"
+}
+
+###
+# @name GetUserByNamelike
+GET  http://localhost:5000/api/users?_page=1&_limit=10&_sort=credit&_order=desc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMzllMzc4ZGMxZTljYzkwYThlZGZkNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMTE5NjA3MiwiZXhwIjoxNjMxMTk2NjcyfQ.IDbPq_yEos9NYQa8TvTzR9l_w7doqIW9L9HqbtyeDco
+
+###
+DELETE http://localhost:5000/api/users/612cc22005274d685edbe4d7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmNlMDJmZDc1YTA1OTczYTc2M2JmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMTA5MTQwMSwiZXhwIjoxNjMxMDkyMDAxfQ.ht6KBrOwMWBXZKWE3-vjnwP55UBsSwet0pq3lr7avvw
+{
+    "password":"1234567",
+    "newPassword":"01234567"
+}
+###
+POST http://localhost:5000/api/logout
+Content-Type: application/json
+###
+GET  http://localhost:5000/api/districts
+
+###
+POST http://localhost:5000/api/motels
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzYyODY3OTMsImV4cCI6MTYzNjI4NzM5M30.fWT2TCxquSQW1UGy8K3y6DbPkL0pFD5o2wRONl9jP-U
+
+{
+    "name":"Nhà trọ Quang", 
+    "images":[{"url":"https://res.cloudinary.com/dpregsdt9/image/upload/v1631509899/motel/thiet-ke-phong-tro-3_hilstc.jpg","public_id":"motel/thiet-ke-phong-tro-3_hilstc"}], 
+    "address":"C45P+HQF, Nhị Mỹ, Cai Lậy, Tiền Giang", 
+    "thumbnail":{"url":"https://res.cloudinary.com/dpregsdt9/image/upload/v1631509940/motel/phong_tro_nho_12m_iyxoqg.jpg","public_id":"motel/phong_tro_nho_12m_iyxoqg"},
+    "room":[{
+        "area":{
+            "width":3,
+            "length":4
+        },
+        "optional":["wifi"],
+        "total":10,
+        "remain":4,
+        "price":500000
+    }],
+    "desc":"Gara ô tô phía ngoài có mái che, có thể chứa được 4 xe ô tô, thuận tiện cho quá trình đi lại. Mảng tường ở tầng 1 được ốp đá mang lại sự chắc chắn, mạnh mẽ cho ngôi nhà.<br/><br/> Hệ thống cửa được làm từ những ô kính lớn, đặc biệt là khoảng giữa nhà là khoảng không gian thông tầng mảng tường được thay bằng cửa kính tạo không gian mở, giúp ngôi nhà thông sáng, mang một vẻ đẹp mỏng manh, tinh tế", 
+    "contact":{"zalo":"0987654321","facebook":"askasduhd"},
+    "status":true,
+    "avalaible":6,
+    "school":["6139d5d6d02c8be6b20880cc"]
+}
+
+###
+GET http://localhost:5000/api/motels?_school=6139d5d6d02c8be6b20880cc
+###
+GET http://localhost:5000/api/motels/615a9f13dc19793cda17890f
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNDc3NTIwMCwiZXhwIjoxNjM0Nzc1ODAwfQ.UMCt_mZc0CCU3Lm8P9K-39apRQUvM4_7ExxIi4H_9Sk
+###
+POST http://localhost:5000/api/motels/rates/615a9f13dc19793cda17890f
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzUxNzAxMDYsImV4cCI6MTYzNTE3MDcwNn0.Xni5Fs3Rs_IC_rhUdgib9PyG_unEnRri66843MQ7PBY
+
+{
+    "params":{"content":"Tui rất thích nhà trọ này",
+    "star":5}
+}
+###
+PATCH http://localhost:5000/api/motels/rates/6145d3d6c74fc7d6fd42b263/61468c6b3d558bfe08a13ac9/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMzMzODc3NiwiZXhwIjoxNjMzMzM5Mzc2fQ.rJ6nqJLbC5SxmOYfmLDHr3PK-Aji7HoYkRSTmVBaXws
+
+{
+    "content":"Tui rất thích nhà trọ này à nha ",
+    "star":5
+}
+###
+DELETE  http://localhost:5000/api/motels/rates/615a9f13dc19793cda17890f/61714c9d288598c499fb14da
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzUyMDg2MTgsImV4cCI6MTYzNTIwOTIxOH0.jYWBmXZXLh6lJyhdxB2sGwy_BuxgVLJHTroWeyFZso4
+###
+DELETE http://localhost:5000/api/motels/rooms/615a9f13dc19793cda17890f/615a9f13dc19793cda178910
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzQ0Mzk5MzMsImV4cCI6MTYzNDQ0MDUzM30.0U6oo8uDcBUEu_1a7Hsyj6oByzUrbxaM7OFVLHfZeak
+
+{}
+###
+PATCH http://localhost:5000/api/motels/616bab2b2c462898bae21381
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNDQ2MjM4NiwiZXhwIjoxNjM0NDYyOTg2fQ.KZraCB5QAGDX02EIQZvDBrhtr-t6RoYVmBoonH_bgVg
+
+{
+    "id":"616be97d09f7d88656d5bdb8",
+    "name":"Nhà trọ Trần Tín",
+    "images":[
+        "http://res.cloudinary.com/dpregsdt9/image/upload/v1634461671/616bab2b2c462898bae21381/wvls9ergwcujdkjyxyvi.jpg",
+        {"url":"http://res.cloudinary.com/dpregsdt9/image/upload/v1634461671/616bab2b2c462898bae21381/wvls9ergwcujdkjyxyvi.jpg",
+        "public_id":"616bab2b2c462898bae21381/utlmdykv0bubvmujreil"},
+        {"url":"http://res.cloudinary.com/dpregsdt9/image/upload/v1634462085/616bab2b2c462898bae21381/qa3c70ibtv9ror7wqwfq.jpg",
+        "public_id":"616bab2b2c462898bae21381/qa3c70ibtv9ror7wqwfq"},
+        {"url":"http://res.cloudinary.com/dpregsdt9/image/upload/v1634462086/616bab2b2c462898bae21381/fub4z534is4cdqic8yre.jpg",
+        "public_id":"616bab2b2c462898bae21381/fub4z534is4cdqic8yre"}
+
+    ]
+    
+}
+###
+POST http://localhost:5000/api/users/favorites/614542cf9f478425c2c07317
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMzQyNTExNSwiZXhwIjoxNjMzNDI1NzE1fQ.tSrR6X4RfvqLiBAzsETHcxNDz1TzS91I2Meq7R607Iw
+
+{}
+###
+POST http://localhost:5000/api/users/favorites/614542cf9f478425c2c07317
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMzQyNTExNSwiZXhwIjoxNjMzNDI1NzE1fQ.tSrR6X4RfvqLiBAzsETHcxNDz1TzS91I2Meq7R607Iw
+
+{}
+###
+PATCH http://localhost:5000/api/motels/room/615a9f13dc19793cda17890f/616bf73f6dc85e9c8b24a7b0
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNDQ3MDEwNCwiZXhwIjoxNjM0NDcwNzA0fQ.ym-hCIix5y7EGTPMe2y5KD2W_jJyyl7rdEltLJRLDWg
+
+{
+"optional":["wifi","dcvs"],
+"price":100000000,
+"area":{"width":5,"length":10},
+"total":9,
+"remain":7,
+"status":true
+}
+###
+GET http://localhost:5000/api/motels/rates
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNDc3NjE4NCwiZXhwIjoxNjM0Nzc2Nzg0fQ.M6ZL0ocdV8NKLv5-ie5bmGWbX7nO57q4faid4wRkHGo
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjg4NTg1OSwiZXhwIjoxNjM2ODg2NDU5fQ.ADeOLta4k9-2olFgGcm_FkSqIL72tQAP4IE9pWqqqrM
+
+{
+    "subjectId":"6173ba553c954151dcc8fdf7",
+    "title":"Tìm nhà trọ",
+    "content":"Để cảnh sát không tìm được mình, bạn hãy cố gắng chặn lối vào nơi bạn đang ẩn nấp. Lý tưởng nhất là có ổ khóa chắc chắn bên trong cánh cửa, và cửa có hướng mở ra ngoài để tên sát nhân không đạp bật vào được. Có lẽ bạn cũng nên chặn cửa bằng các chướng ngại vật khác, chẳng hạn như các đồ nội thất nặng.",
+    "tags":"sachse,600",
+    "school": [],
+    "price": 7000000,
+    "additional":""
+    
+}
+###
+POST  http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjg4NzMyMywiZXhwIjoxNjM2ODg3OTIzfQ.pa36ceyTLe0fI_Sr4a8K7dBUHmbrkf6LCB1GhBwyw_U
+
+{
+    "title":"Tìm người ở ghép",
+    "content":"Để cảnh sát không tìm được mình, bạn hãy cố gắng chặn lối vào nơi bạn đang ẩn nấp. Lý tưởng nhất là có ổ khóa chắc chắn bên trong cánh cửa, và cửa có hướng mở ra ngoài để tên sát nhân không đạp bật vào được. Có lẽ bạn cũng nên chặn cửa bằng các chướng ngại vật khác, chẳng hạn như các đồ nội thất nặng.",
+    "tags":"sach se ,600",
+    "motel":"615a9f13dc19793cda17890f",
+    "subjectId":"6173ba553c954151dcc8fdf8",
+    "additional":""
+}
+###
+PATCH  http://localhost:5000/api/posts/6190eb3490c8afd1f14858a7
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjg4Nzk0MCwiZXhwIjoxNjM2ODg4NTQwfQ.xkmY60sPjR-qThq9b5W2AuvHg8qep-kZjDL7tS471og
+
+{
+    "title":"Tìm người ở ghép",
+    "content":"Để cảnh sát không tìm được mình, bạn hãy cố gắng chặn lối vào nơi bạn đang ẩn nấp. Lý tưởng nhất là có ổ khóa chắc chắn bên trong cánh cửa, và cửa có hướng mở ra ngoài để tên sát nhân không đạp bật vào được. Có lẽ bạn cũng nên chặn cửa bằng các chướng ngại vật khác, chẳng hạn như các đồ nội thất nặng.",
+    "tags":"sach se ,dep trai",
+    "motel":"615a9f13dc19793cda17890f",
+    "additional":"deptrainhuNguyenTanMai"
+}
+###
+DELETE  http://localhost:5000/api/posts/617696c696a8ddd8b7732938
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxM2M3ZTNjY2Q5NTQ0YWU1MGUyNjlkZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNTE2MjIyNSwiZXhwIjoxNjM1MTYyODI1fQ.6L1XuCuL6qakQBE-ajBuC4YZdO8huANqhx32WA0zAAU
+###
+POST http://localhost:5000/api/motels/rates/reports
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzU3MzM1OTUsImV4cCI6MTYzNTczNDE5NX0.rPmytZ1n0lTLuMw2PZS4-QCArmvhMIyJ31fvnyx6YoM
+
+{
+    "motelId":"615a9f13dc19793cda17890f",
+    "rateId":"61655a0076bd70071955602a",
+    "content":"Comment này thật mất day"
+}
+###
+POST http://localhost:5000/api/comments/6195d0ea8b995acd0afd726d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6MCwiaWF0IjoxNjM4NjEwNTUwLCJleHAiOjE2Mzg2MTExNTB9.xpUrrSYeTV-FfUF7mQa5i5ANmK8pLl5UezaXGdJ1Fz0
+
+{
+    "commentId":"6196f9feb3c5925e427b18b1",
+    "userId":"614fd8d7f4d715fae7dd4bf1",
+    "content":"Comment này thật mất dạy 6"
+}
+###
+PATCH http://localhost:5000/api/comments/6195d0ea8b995acd0afd726d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzIyOTg1NCwiZXhwIjoxNjM3MjMwNDU0fQ.g1WuohVScwUso-PZIbwSpCDLPDHCcxoUfVf0hTo76ms
+
+{
+    "content":"Bài này thật là hay"
+}
+###
+DELETE http://localhost:5000/api/comments/619e470bed609c118261f707
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzg5NDUwNiwiZXhwIjoxNjM3ODk1MTA2fQ.QX9h3ybImqXebB2Dk0iCV6ga-5RlnCFD7El4KvRsObc
+###
+POST http://localhost:5000/api/feedbacks
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzU2ODE0MTEsImV4cCI6MTYzNTY4MjAxMX0.1T4Ug5AjygYdq47kx0KF7emJuxjHxbQGx7RdzznteU0
+
+{
+    "content":"Hello World"
+}
+###
+GET http://localhost:5000/api/approves
+###
+POST http://localhost:5000/api/posts/likes/6195d0ea8b995acd0afd726d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzMxMTk0NywiZXhwIjoxNjM3MzEyNTQ3fQ.k3D5aOMf5fx2iVQpZ6P0seQW0F7ByET7OrbLaLAaNVQ
+
+{
+    "params":{"type":0}
+}
+###
+DELETE http://localhost:5000/api/posts/likes/6195d0ea8b995acd0afd726d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzI4MjMxNiwiZXhwIjoxNjM3MjgyOTE2fQ.pkVgMknKtdcTWEd_irYY-OBaPiOcvJFX7W4o9n_9BFE
+###
+POST http://localhost:5000/api/comments/likes/618a70c328c53b2415056829
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzY0NTc5NDUsImV4cCI6MTYzNjQ1ODU0NX0.fqJ9ofvGkrkzy-MYSB118l4qRPaC5vaO6uSRQYTBeu8
+
+{
+    "type":2
+}
+###
+DELETE http://localhost:5000/api/comments/likes/618a70c328c53b2415056829
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmI4Njc4ZGQxZTgwOTBjOGMxNzI1OSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzY1MDM0NTIsImV4cCI6MTYzNjUwNDA1Mn0.5s4QJ2c_OKZz3Pg37kOvTYhpdtNE4GS-DWqZyXgamCU
+###
+POST http://localhost:5000/api/posts/likes/6195d0ea8b995acd0afd726d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzI4MjY5MSwiZXhwIjoxNjM3MjgzMjkxfQ.hNbANMeZCRejR8tR251E6ijHw7aL9VRDzyDeSyF_KXs
+
+{
+    "type":6
+}
+###
+DELETE http://localhost:5000/api/posts/likes/6195d0ea8b995acd0afd726d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzI4MjY5MSwiZXhwIjoxNjM3MjgzMjkxfQ.hNbANMeZCRejR8tR251E6ijHw7aL9VRDzyDeSyF_KXs
+###
+POST http://localhost:5000/api/comments/likes/619626144fad7e8c689786fd
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzI4MjY5MSwiZXhwIjoxNjM3MjgzMjkxfQ.hNbANMeZCRejR8tR251E6ijHw7aL9VRDzyDeSyF_KXs
+
+{
+    "type":6
+}
+###
+DELETE http://localhost:5000/api/comments/likes/619626144fad7e8c689786fd
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzI4MjY5MSwiZXhwIjoxNjM3MjgzMjkxfQ.hNbANMeZCRejR8tR251E6ijHw7aL9VRDzyDeSyF_KXs
+###
+POST http://localhost:5000/api/posts/reports
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzg5MzMzMiwiZXhwIjoxNjM3ODkzOTMyfQ.TloJonDcqZbNZX57i8T_ZAyh1jUdK5CS77sDYtyV0_M
+
+{
+    "postId":"619790eb159d7286373464bc",
+    "content":"Bài viết này vi phạm"
+}
+###
+POST http://localhost:5000/api/comments/reports
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNzg5NDAwMiwiZXhwIjoxNjM3ODk0NjAyfQ.mRsmJ8irMNYzU9S3VD80rPWnUrYky08grXJHJTaTpCA
+
+{
+    "commentId":"61a042fa94846631e7e84118",
+    "content":"Đồ tục tĩu"
+}
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzNjg4NTg1OSwiZXhwIjoxNjM2ODg2NDU5fQ.ADeOLta4k9-2olFgGcm_FkSqIL72tQAP4IE9pWqqqrM
+
+{
+    "subjectId":"6173ba553c954151dcc8fdf9",
+    "title":"Review nhà trọ Minh",
+    "content":"Để cảnh sát không tìm được mình, bạn hãy cố gắng chặn lối vào nơi bạn đang ẩn nấp. Lý tưởng nhất là có ổ khóa chắc chắn bên trong cánh cửa, và cửa có hướng mở ra ngoài để tên sát nhân không đạp bật vào được. Có lẽ bạn cũng nên chặn cửa bằng các chướng ngại vật khác, chẳng hạn như các đồ nội thất nặng.",
+    "tags":"sachse,giare",
+    "review":{
+        "cleanup": 5,
+        "road": 4,
+        "beauty": 5,
+        "quiet": 7,
+        "price": 4
+    }
+}
+###
+DELETE http://localhost:5000/api/notify/a50c87f9-37fe-42a4-a1e8-6227c8e793d3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzODYyNjQ2NiwiZXhwIjoxNjM4NjI3MDY2fQ.Avsd_0BRHwlatoxSr9J2ZEaRbJxPojBUzwazb2td8E0
+###
+PATCH http://localhost:5000/api/notify/read/f14e326c-623e-4242-96e0-c0f8c4cf3abf
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzODYyNzQwMywiZXhwIjoxNjM4NjI4MDAzfQ.y2LEy-jX2y7cAkgGr83wRBEQ8zOrXuwNUKcGM-w-D0s
+###
+PATCH http://localhost:5000/api/notify/read-all/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzODYyODA1NiwiZXhwIjoxNjM4NjI4NjU2fQ.5Nf7Vz1fpqrPN8l4qDE8YQy-OmQLpjRZahpq-9lH9nE
+###
+GET http://localhost:5000/api/notify/?_page=1&_limit=2&_read[]=true&_read[]=true
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzODcxMDA0NywiZXhwIjoxNjM4NzEwNjQ3fQ.4rJvYIwuVvmgEf0JF0fTwX4srM4ejqeyoKXYxe2el48
+
+###
+post http://localhost:5000/api/users/likes/613c7e3ccd9544ae50e269dd
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzOTAyNTM1MSwiZXhwIjoxNjM5MDI1OTUxfQ.Xb09OCjgtMI9u8PBwivqYodl-vlRZlLsi-KSdrxgi4g
+###
+DELETE http://localhost:5000/api/users/done-jobs/61b730f103233d1543bdda83
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzOTM5NTg1NCwiZXhwIjoxNjM5Mzk2NDU0fQ.FjI3arcdh5Rkdd_gyJ-Epjeh2u4J7jbBRbxIdXKODB4
+###
+GET http://localhost:5000/api/users/done-jobs/?_limit=2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNGZkOGQ3ZjRkNzE1ZmFlN2RkNGJmMSIsImlzQWRtaW4iOnRydWUsImNyZWRpdCI6OTksImlhdCI6MTYzOTQ5MzMxOSwiZXhwIjoxNjM5NDkzOTE5fQ.MCBA6VIR-rdoY2x1Gd2yrX68rWYyrPrrbc2-kCX8ZC0
